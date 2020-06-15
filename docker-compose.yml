@@ -1,0 +1,16 @@
+version: "2.0"
+services:
+
+    # Gridsome Builder
+    app:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        volumes:
+            - .:/app/root
+        command: node
+        tty: true
+        env_file:
+            - .env
+        ports:
+            - "8080:8080"
